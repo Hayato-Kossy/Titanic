@@ -6,7 +6,7 @@ import streamlit as st
 from sklearn.ensemble import RandomForestClassifier
 
 #データ整理
-train_df = pd.read_csv('/Users/hayato/streamlit/Titanic/train_df.csv')
+train_df = pd.read_csv('train_df.csv')
 train_df = train_df.drop(['Unnamed: 0'], axis=1)
 
 X_train = train_df.drop("Survived", axis=1)
@@ -18,7 +18,7 @@ random_forest.fit(X_train, Y_train)
 
 
 #テストデータの整理、モデルの実行
-test_df = pd.read_csv('/Users/hayato/streamlit/Titanic/test_df.csv')
+test_df = pd.read_csv('test_df.csv')
 test_df = test_df.drop(['Unnamed: 0'], axis=1)
 X_test = test_df
 Y_pred = random_forest.predict(X_test)
